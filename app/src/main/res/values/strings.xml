@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppSqliteCiudades</string>
+    <string name="btn_agnadir">Añadir ciudad</string>
+    <string name="btn_visualizar">Visualizar</string>
+    <string name="tv_bienvenida">Bienvenido a la app de las ciudades</string>
+    <string name="tv_insertar">Inserta una ciudad</string>
+    <string name="hint_nombre">Nombre de la ciudad</string>
+    <string name="hint_provincia">Provincia</string>
+    <string name="et_num_hab">Número de habitantes</string>
+    <string name="btn_validar">validar</string>
+</resources>
