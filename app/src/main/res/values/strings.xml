@@ -8,4 +8,8 @@
     <string name="hint_provincia">Provincia</string>
     <string name="et_num_hab">Número de habitantes</string>
     <string name="btn_validar">validar</string>
+    <string name="btn_guardar_cambios">Guardar Cambios</string>
+    <string name="btn_eliminar">eliminar Ciudad</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_cancelar_insercion">Cancelar</string>
 </resources>

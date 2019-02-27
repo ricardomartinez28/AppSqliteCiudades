@@ -39,14 +39,8 @@ public class Ciudad {
         return numHab;
     }
 
-
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNumHab(int numHab) {

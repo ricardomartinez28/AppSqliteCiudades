@@ -76,6 +76,8 @@ public class CiudadesDatasource {
         close(sdb);
     }
 
+
+
     public void borrarCiudad(int idCiudad){
 
         SQLiteDatabase sdb = openWriteable();
@@ -121,6 +123,36 @@ public class CiudadesDatasource {
         sdb.close();
         return listaCiudades;
 
+    }
+
+
+    public Ciudad consultarCiudad(int idCiudad){
+
+        SQLiteDatabase sdb = openReadable();
+
+        String select = "SELECT * WHERE " + CiudadesContract.CiudadesEntry.COLUMN_ID + " = ?";
+
+        String [] args = {String.valueOf(idCiudad)};
+
+        Cursor cursor = sdb.rawQuery(select, args);
+
+        Ciudad ciudad = null;
+        int id;
+        String nombre;
+        String provincia;
+        int numHab;
+        if (cursor.moveToFirst()) {
+            id = cursor.getInt(cursor.getColumnIndex(CiudadesContract.CiudadesEntry.COLUMN_ID));
+            nombre = cursor.getString(cursor.getColumnIndex(CiudadesContract.CiudadesEntry.COLUMN_NAME));
+            provincia = cursor.getString(cursor.getColumnIndex(CiudadesContract.CiudadesEntry.COLUMN_PROVINCE));
+            numHab=cursor.getInt(cursor.getColumnIndex(CiudadesContract.CiudadesEntry.COLUMN_NUMHAB));
+
+            ciudad = new Ciudad(id, nombre,provincia,numHab);
+        }
+
+        cursor.close();
+        sdb.close();
+        return ciudad;
     }
 
 }
