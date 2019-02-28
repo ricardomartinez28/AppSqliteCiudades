@@ -16,7 +16,7 @@ public class CiudadesSQLiteHelper extends SQLiteOpenHelper {
                     CiudadesContract.CiudadesEntry.COLUMN_ID+" INTEGER PRIMARY KEY AUTOINCREMENT ,"+
                     CiudadesContract.CiudadesEntry.COLUMN_NAME+" TEXT NOT NULL, "+
                     CiudadesContract.CiudadesEntry.COLUMN_PROVINCE+" TEXT NOT NULL, "+
-                    CiudadesContract.CiudadesEntry.COLUMN_NUMHAB+" INTEGER NOT NULL;";
+                    CiudadesContract.CiudadesEntry.COLUMN_NUMHAB+" INTEGER NOT NULL);";
 
     public CiudadesSQLiteHelper(@Nullable Context context) {
         super(context, DATABASE_NAME,null, DATABASE_VERSION);

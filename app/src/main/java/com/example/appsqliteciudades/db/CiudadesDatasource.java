@@ -83,7 +83,7 @@ public class CiudadesDatasource {
         SQLiteDatabase sdb = openWriteable();
         sdb.beginTransaction();
 
-        String clausulaWhere= CiudadesContract.CiudadesEntry.COLUMN_ID+" = ? "+idCiudad;
+        String clausulaWhere= CiudadesContract.CiudadesEntry.COLUMN_ID+" = "+idCiudad;
         sdb.delete(CiudadesContract.CiudadesEntry.TABLE_NAME, clausulaWhere, null);
 
         sdb.setTransactionSuccessful();
@@ -130,7 +130,7 @@ public class CiudadesDatasource {
 
         SQLiteDatabase sdb = openReadable();
 
-        String select = "SELECT * WHERE " + CiudadesContract.CiudadesEntry.COLUMN_ID + " = ?";
+        String select = "SELECT * FROM "+ CiudadesContract.CiudadesEntry.TABLE_NAME +" WHERE " + CiudadesContract.CiudadesEntry.COLUMN_ID + " = ?";
 
         String [] args = {String.valueOf(idCiudad)};
 

@@ -40,7 +40,7 @@ public class ListaCiudadesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ListaCiudadesActivity.this , TarjetaCiudadActivity.class );
-                i.putExtra(String.valueOf(recyclerView.indexOfChild(v)), "IDCIUDAD");
+                i.putExtra("IDCIUDAD", lista.get(recyclerView.indexOfChild(v)).getId());
                 startActivity(i);
 
             }

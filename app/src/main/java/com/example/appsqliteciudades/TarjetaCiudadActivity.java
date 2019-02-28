@@ -16,7 +16,7 @@ public class TarjetaCiudadActivity extends AppCompatActivity {
     EditText etNombre;
     EditText etProvincia;
     EditText etNumHab;
-    Intent i;
+
     Ciudad ciudad;
     CiudadesDatasource cds;
     Button btnBorrar;
@@ -33,9 +33,15 @@ public class TarjetaCiudadActivity extends AppCompatActivity {
         btnBorrar=findViewById(R.id.btnEliminar);
 
         cds= new CiudadesDatasource(this);
-        String id= i.getStringExtra("IDCIUDAD");
+        int id= getIntent().getIntExtra("IDCIUDAD", 0);
 
-        ciudad= cds.consultarCiudad(Integer.parseInt(id));
+        System.out.println(id);
+        ciudad= cds.consultarCiudad(id);
+
+        etNombre.setText(ciudad.getNombre());
+        etProvincia.setText(ciudad.getProvincia());
+        etNumHab.setText(String.valueOf(ciudad.getNumHab()));
+
 
     }
 
@@ -51,6 +57,10 @@ public class TarjetaCiudadActivity extends AppCompatActivity {
         ciudad.setNumHab(Integer.parseInt(numHab));
 
         cds.editarCiudad(ciudad);
+
+        Toast.makeText(this,"Se ha modificado correctamente",Toast.LENGTH_LONG).show();
+
+
     }
 
 
