@@ -63,6 +63,7 @@ public class TarjetaCiudadActivity extends AppCompatActivity {
 
     }
 
+    finish();
 
     }
 
@@ -78,6 +79,8 @@ public class TarjetaCiudadActivity extends AppCompatActivity {
         etNumHab.setText("");
 
         btnBorrar.setEnabled(false);
+
+        finish();
 
     }
 

@@ -52,6 +52,8 @@ public class InsertarActivity extends AppCompatActivity {
 
                 etNombre.setText("");
                 etProvincia.setText("");
+                etNumHab.setText("");
+                finish();
 
             }else{
                 Toast.makeText(this, "La insercion no se ha podido realizar",Toast.LENGTH_LONG).show();

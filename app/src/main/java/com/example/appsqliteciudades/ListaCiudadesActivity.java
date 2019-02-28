@@ -1,6 +1,7 @@
 package com.example.appsqliteciudades;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,10 +42,22 @@ public class ListaCiudadesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(ListaCiudadesActivity.this , TarjetaCiudadActivity.class );
                 i.putExtra("IDCIUDAD", lista.get(recyclerView.indexOfChild(v)).getId());
-                startActivity(i);
+                startActivityForResult(i, 1);
 
             }
         });
+
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode==1){
+            lista= cds.CargarCiudades();
+
+            recyclerView.setAdapter(adapter);
+        }
     }
 }
